@@ -1158,3 +1158,157 @@ section {
     0% { opacity: 0; transform: scale(0.8); }
     100% { opacity: 1; transform: scale(1); }
 }
+
+/* Contenedor principal: Divide en 2 columnas */
+.about-info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Estilo de la Tarjeta */
+.about-card {
+    background-color: var(--color-grey-5);
+    border: 1px solid var(--color-grey-5);
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    box-shadow: 1px 2px 15px rgba(0,0,0,0.1);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid var(--color-secondary);
+    box-shadow: 1px 4px 15px rgba(0,0,0,0.32);
+}
+
+/* Icono grande en la esquina */
+.card-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 3rem;
+    color: var(--color-grey-4);
+    opacity: 0.3;
+}
+
+/* Tipografía */
+.about-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-white);
+}
+
+.card-subtitle {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.card-desc {
+    line-height: 1.8rem;
+    color: var(--color-grey-1);
+}
+
+/* Lista de Hobbies (Estilo limpio) */
+.hobbies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hobby-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--color-grey-1);
+}
+
+.hobby-item i {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    width: 25px; /* Para alinear iconos */
+    text-align: center;
+}
+
+/* RESPONSIVE: En celular se pone uno debajo del otro */
+@media screen and (max-width: 800px) {
+    .about-info-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Estilos para Certificaciones --- */
+
+.cert-container {
+    display: grid;
+    /* Esto crea columnas automáticas que no se hacen más pequeñas de 250px */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+.cert-card {
+    background-color: var(--color-grey-5);
+    border: 1px solid var(--color-grey-5);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 1px 2px 10px rgba(0,0,0,0.1);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    border: 1px solid var(--color-secondary);
+    box-shadow: 1px 4px 15px rgba(0,0,0,0.2);
+}
+
+.cert-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--color-secondary); /* Fondo verde */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Evita que el icono se aplaste */
+}
+
+.cert-icon i {
+    font-size: 1.8rem;
+    color: var(--color-white); /* Icono blanco */
+}
+
+/* En modo claro, queremos el icono blanco sobre fondo verde, se ve bien. 
+   Pero si quieres invertirlo en modo claro, podrías ajustar aquí. */
+
+.cert-info h5 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: var(--color-white);
+    font-weight: 600;
+}
+
+.cert-issuer {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-grey-1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+}
+
+.cert-date {
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    font-weight: 500;
+}
